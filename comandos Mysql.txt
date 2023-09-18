@@ -1,7 +1,7 @@
 1 create database prueba
 2 drop database prueba
 
-
+//PDO=interfaz que se usa para ingresar a base de dato (distintas base de datos)
 
 
 -------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ o
 -------------------------(null,-----,------------------,----------------,null,null);                          
  
 
-SELECT * FROM users WHERE username like 'maria%' ==== esto busca en la fila "username" los usuarios con las letras del parametro Like el "%" señala los caracteres que no tenemos 
+SELECT * FROM users WHERE username like 'maria%' ==== esto busca en la fila "username" los usuarios con las letras del parametro Like el "%" seï¿½ala los caracteres que no tenemos 
  
 SELECT * FROM users WHERE NOT username='maria'; //filtra sin mostrar las filas que se piden//
 

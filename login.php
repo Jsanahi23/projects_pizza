@@ -9,12 +9,22 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-$usr = $_POST["username"];  
-$pass = $_POST["password"];
-$hased_pass = hash("sha256",$pass);
-$sql = "SELECT * FROM users WHERE ((username=:usr) OR (email=:usr)) AND (PASSWORD=:hashed_pass) AND (active="si")";
+$usr = $_POST['username'];  
+$pass = $_POST['password'];
+$hashed_pass = hash('sha256',$pass);
+$sql = "SELECT * FROM users WHERE (username=:usr OR email=:usr) AND (PASSWORD=:hashed_pass) AND (active='si')";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(":usr,$usr");
-$stmt->bindValue(":hashed_pass,$hashed_pass");
+$stmt->bindValue(':usr',$usr);
+$stmt->bindValue(':hashed_pass',$hashed_pass);
 $stmt->execute();
-//PDO=interfaz que se usa para ingresar a base de dato (distintas base de datos)?>
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($row == 0) {
+    echo "Login invalido";
+    
+    } else {
+      echo "Bienvenido";
+    }
+    
+?>
+
