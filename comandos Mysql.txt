@@ -57,3 +57,5 @@ SELECT * FROM users WHERE ((username='maria') OR (email='maria@gmail.com')) AND 
 SELECT * FROM users WHERE ((username='maria') OR (email='maria@gmail.com')) AND (PASSWORD=sha2('123456',256)) AND (active="si");
 
 SELECT COUNT(*) FROM users WHERE ((username='maria') OR (email='maria@gmail.com')) AND (PASSWORD=sha2('123456',256)) AND (active="si");
+
+mariano:123456
